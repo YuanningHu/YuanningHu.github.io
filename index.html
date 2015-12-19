@@ -154,9 +154,7 @@
     function generateSphere(){    	
     	var sphereGeometry = new THREE.SphereGeometry(60, 15, 15);
     	var material;
-    	if (level == 1 || level > 4){
-    		material = dynamicEnvMaterial; 
-    	} else if (level == 2 || level == 3 || level == 4) {
+    	if (level > 1 && level < 5) {
     		var metalImage = THREE.ImageUtils
                     .loadTexture(texturePath+textures[level-2]);
 			metalImage.magFilter = THREE.NearestFilter;
@@ -179,6 +177,8 @@
 			  vertexShader : vertexShader,
 			  fragmentShader : fragmentShader,
 			});
+		} else {
+			material = dynamicEnvMaterial; 
 		}
 		sphere = new THREE.Mesh(sphereGeometry, material);     
         scene.add(sphere);
