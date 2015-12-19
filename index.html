@@ -100,10 +100,7 @@
         scene.add(spotLight);
         
         // create a sphere and add to scene
-        dynamicEnvMaterial = new THREE.MeshBasicMaterial({envMap: cubeCamera.renderTarget, side: THREE.DoubleSide});
-        var envMaterial = new THREE.MeshBasicMaterial({envMap: textureCube, side: THREE.DoubleSide});
-        envMaterial.refractionRatio = 0.95;
-		
+        dynamicEnvMaterial = new THREE.MeshBasicMaterial({envMap: cubeCamera.renderTarget, side: THREE.DoubleSide});		
 		generateSphere();
 		
         // position and point the camera to the center of the scene
